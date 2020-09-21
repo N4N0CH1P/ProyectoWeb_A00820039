@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+
+    <body>
+        <div id = "login">
+            <input v-model="user" placeholder="Username">
+            <input v-model="pass" placeholder="Password">
+            <button v-on:click= "username = user; password = pass">
+                Login
+            </button>
+        </div>
+
+        <div id = "app">
+            <template v-if = "messages.length != 0">
+                <p v-for="message in messages"> {{message}}</p>
+            </template>
+        </div>
+
+
+    </body>
+    <script>
+        var app = new Vue({
+           el: '#app', 
+           data: {
+               messages: [
+                   {mes1: 'Me gusta la musica'},
+                   {mes2: 'Me gustan los videogjuegos'}
+               ]
+           }
+        });
+
+        var login = new Vue ({
+            el: '#login',
+            data: {
+                username: 'nano',
+                password: 'password'
+            }
+        });
+
+        var password = null;
+        var username = null;
+   </script>
+</html>
